@@ -1,0 +1,45 @@
+doctype 5
+html
+  head
+    link(href='/css/style.css', rel='stylesheet')
+    script(src='http://code.jquery.com/jquery-1.6.1.min.js')
+  body
+  #header
+    #logo iSPY
+    #account
+      #username teeterc@gmail.com
+      #account-settings Account Settings
+      #logout Logout
+  #content-body
+    #navigation
+      #breadcrumb
+        .element teeterc@gmail.com
+        .element http://www.boundip.com
+      #actions 
+        .element tweet
+        .element rss
+    #controls
+      #views
+        .element.select  
+          input(type='checkbox')
+
+        .element.view view
+        .element.tag tag
+        .element.archive archive
+
+      #filters
+        .element.live live
+        .element.archived archived
+        input.element(name='search', value='search...')
+    #records
+      - each record in records
+        .record
+          input.record-ctrl(type='checkbox')
+          img.record-eye(src='/images/eye.png')
+          .record-time #{record.datetime}
+          .record-duration #{record.duration}
+          .record-url #{record.url}
+          .record-ip #{record.ip}
+          .record-id #{record.recordId}
+            
+      
